@@ -31,7 +31,6 @@ Constraints:
 
 from typing import List
 
-
 def twoSum(nums: List[int], target: int) -> List[int]:
     mem = {}    # at each iteration, save the number and index for lookup. Possible only because of constraint - 'Only one valid answer exists.'
     for idx in range(len(nums)):    # one iteration O(n)
