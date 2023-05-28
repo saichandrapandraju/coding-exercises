@@ -34,7 +34,7 @@ from typing import List
 
 def twoSum(nums: List[int], target: int) -> List[int]:
     mem = {}    # at each iteration, save the number and index for lookup. Possible only because of constraint - 'Only one valid answer exists.'
-    for idx in range(len(nums)):
+    for idx in range(len(nums)):    # one iteration O(n)
         compliment = target-nums[idx]   
         if compliment in mem:   # check if current number's compliment occured so far. If yes, return compliment's idx, current idx [both values at these positions sums to target]
             return [mem[compliment], idx]
