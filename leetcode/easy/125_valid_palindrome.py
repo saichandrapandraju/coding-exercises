@@ -30,19 +30,19 @@ Constraints:
 
 
 def isPalindrome(s: str) -> bool:
-    l, r = 0, len(s) - 1
-    for _ in range(len(s)):
-        if l >= r:
-            return True
-        elif s[l].isalnum() and s[r].isalnum():
-            if s[l].lower() == s[r].lower():
+    l, r = 0, len(s) - 1            # set two pointers for left most and right most characters
+    for _ in range(len(s)):         # iterate len(s) times, will work b/c each time we'll be incrementing/decrementing by one position
+        if l >= r:                  # terminating condition
+            return True             # if left pointer reaches/crosses right pointer -> all the chars till that point are valid -> so True
+        elif s[l].isalnum() and s[r].isalnum():         # if both chars are valid alpha numerics
+            if s[l].lower() == s[r].lower():            # if both are equal, increment left and decrement right to progress further
                 l += 1
                 r -= 1
             else:
-                return False
-        elif not s[l].isalnum():
+                return False                            # if both are valid chars and not equal -> not palindrome
+        elif not s[l].isalnum():                        # if left is not proper valid char -> increment left
             l += 1
-        elif not s[r].isalnum():
+        elif not s[r].isalnum():                        # if right is not proper valid char -> decrement right
             r -= 1
 
 
